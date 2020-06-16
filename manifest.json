@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "LiveJournal readabilty cleanup",
+    "version": "1.0",
+    "description": "",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.livejournal.com/*.html",
+                "https://*.livejournal.com/*.html?*"
+            ],
+            "run_at": "document_start",
+            "js": [
+                "000_env_create.js",
+                "evaluate_on_page.js",
+                "cleanup.js",
+                "999_env_delete.js"
+            ]
+        }
+    ]
+}
